@@ -20,6 +20,19 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
+
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  encoding: unicode
+  database: db/production.postgresql
+
+# # or use  
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5

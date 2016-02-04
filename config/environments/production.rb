@@ -42,6 +42,24 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
+# mkdir app/middleware # add this here:
+  config.middleware.use ChatActionCable  
+  config.web_socket_server_url = "wss://pacific-chamber-3660.herokuapp.com/"  
+  # and then this # middleware/action_cable_chat.rb
+    # class ChatActionCable  
+    #   def initialize(app, options={})
+    #     @app = app
+    #   end
+
+    #   def call(env)
+    #     if Faye::WebSocket.websocket?(env)
+    #       ActionCable.server.call(env)
+    #     else
+    #       @app.call(env)
+    #     end
+    #   end
+    # end  
+
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 

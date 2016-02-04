@@ -50,3 +50,5 @@ group :production do
   gem 'rails_12factor'
   gem "faye-websocket"
 end
+
+# ruby "2.2.3" # not required
